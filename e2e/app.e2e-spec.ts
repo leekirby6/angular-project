@@ -1,16 +1,14 @@
-import { MyAppPage } from './app.po';
+import { HeroAppPage } from './app.po';
 
-describe('my-app App', () => {
-  let page: MyAppPage;
+describe('hero-app App', () => {
+  let page: HeroAppPage;
 
   beforeEach(() => {
-    page = new MyAppPage();
+    page = new HeroAppPage();
   });
 
-  it('should display welcome message', done => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    page.getParagraphText()
-      .then(msg => expect(msg).toEqual('Welcome to app!!'))
-      .then(done, done.fail);
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });
